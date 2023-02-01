@@ -5,13 +5,14 @@
 
 int subtract2sc_issafe(int x, int y){
 
+    //This is cool
     //Grabs the size of int
     int size = sizeof(int)
     //Computes the difference of x and y
     int diff = x - y;
 
     //Converts the size into bits so we can calculate the upper/lowerbound
-    int bits = size / 8;
+    int bits = size * 8;
 
     //Computes the upper and lower bound
     int lower_bound = - pow(2, (bits -1));
