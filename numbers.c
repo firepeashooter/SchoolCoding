@@ -4,34 +4,28 @@
 
 
 int subtract2sc_issafe(int x, int y){
-
-    //Check Negative by sign bit and make sure that we also check that x and y are different signs
-
-    //Grabs the size of int
-    int size = sizeof(int);
-    //Computes the difference of x and y
-    int diff = x - y;
-	
-    //Converts the size into bits so we can calculate the upper/lowerbound
-    int bits = size * 8;
-
+    //Overflows if x and ys sign are different and if the result has the same sign as y
+    if( (x > 0 && y < 0) || (x < 0 && y > 0)){
+    
     //Overflows if the result has the same sign as y
-    if( (diff > 0 && y > 0) || (diff < 0 && y < 0)){
-        return 0;
-    }
-    else{
-        return 1;
+        if( (diff > 0 && y > 0) || (diff < 0 && y < 0)){
+            return 0;
+        }
+        else{
+            return 1;
+        }
     }
 
+    //What if both sign are the same?? How do we find overflow?
 
 }
 
 int main (int argc, char* argv[]){
 
 //Tests Overflow
-//printf(subtract2sc_issafe());
+printf(subtract2sc_issafe(2147483647, -5));
 
 //Tests Underflow
-printf("%i\n", subtract2sc_issafe(-2147483648, 1));
+printf("%i\n", subtract2sc_issafe(-2147483648, 5));
 }
 
