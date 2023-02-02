@@ -1,29 +1,26 @@
 #include<stdio.h>
-#indclude<math.h>
+#include<math.h>
 
 
 
 int subtract2sc_issafe(int x, int y){
 
-    //This is cool
+    //Check Negative by sign bit and make sure that we also check that x and y are different signs
+
     //Grabs the size of int
-    int size = sizeof(int)
+    int size = sizeof(int);
     //Computes the difference of x and y
     int diff = x - y;
-
+	
     //Converts the size into bits so we can calculate the upper/lowerbound
     int bits = size * 8;
 
-    //Computes the upper and lower bound
-    int lower_bound = - pow(2, (bits -1));
-    int upper_bound = pow(2, (bits - 1))
-
-    //Checks for overflow (if the difference is bigger or lower than +-2^(w-1)) where w is the number of bits
-    if(diff <= lower_bound || dif >= upper_bound){
-        return 0
+    //Overflows if the result has the same sign as y
+    if( (diff > 0 && y > 0) || (diff < 0 && y < 0)){
+        return 0;
     }
     else{
-        return 1
+        return 1;
     }
 
 
@@ -32,9 +29,9 @@ int subtract2sc_issafe(int x, int y){
 int main (int argc, char* argv[]){
 
 //Tests Overflow
-printf(subtract2sc_issafe())
+//printf(subtract2sc_issafe());
 
 //Tests Underflow
-printf(subtract2sc_issafe())
+printf("%i\n", subtract2sc_issafe(-2147483648, 1));
 }
 
