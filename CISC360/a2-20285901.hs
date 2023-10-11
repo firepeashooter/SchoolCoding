@@ -30,7 +30,7 @@ divisible_by factor ch = (mod (ord ch) factor == 0)
 
 rewrite :: (Char -> Bool) -> String -> String
 rewrite important [] = []
-rewrite important (x:xs) = if important x then x: append x (rewrite important xs) else x : rewrite important xs
+rewrite important (x:xs) = if important x then x: x : rewrite important xs else x : rewrite important xs
 
 -- Hint: Pattern-match on the second argument.
 
