@@ -33,8 +33,7 @@ rewrite important [] = []
 rewrite important (x:xs) = if important x then x: append x (rewrite important xs) else x : rewrite important xs
 
 -- Hint: Pattern-match on the second argument.
-append a [] = []
-append a (x : xs) = x : append a xs
+
 
 
 test_rewrite1 = (rewrite (divisible_by 2) "") == ""
@@ -119,7 +118,10 @@ data Song = Harmony Song Song
 
 sing :: Song -> Song
 
--- (replace this line with your clauses)
+sing (Harmony (Harmony (Atom (x:xs)) (motif)) (right)) = if [x] == "k" then motif else Harmony (Harmony (Atom (x:xs)) (motif)) (right)
+sing (Harmony (Harmony (Harmony (Atom (y:ys)) (s1) )  (s2) ) (s3)) = if [y] == "s" then (Harmony (Harmony s1 s3)(Harmony s2 s3)) else Harmony (Harmony (Harmony (Atom (y:ys)) (s1) )  (s2) ) (s3)
+sing (Harmony left right) = Harmony (sing left) (sing right)
+
 
 sing other = other      -- (you're allowed to change this line if you need to)
 
@@ -131,8 +133,7 @@ test_sing1 = (sing (Harmony ascend (Atom "k3")))
               == Harmony (Harmony (Atom "k1") (Atom "k3"))
                          (Harmony (Atom "k2") (Atom "k3"))
                          
-test_sing2 = sing (sing (Harmony (Harmony (Atom "k1") (Atom "k"))
-                                 (Harmony (Atom "k2") (Atom "k"))))
+test_sing2 = sing (sing (Harmony (Harmony (Atom "k1") (Atom "k")) (Harmony (Atom "k2") (Atom "k"))))
               == Atom "k"
 
 test_sing3 = (sing ascend) == ascend
@@ -148,7 +149,7 @@ test_sing4 = sing (Harmony (Atom "s?") (Harmony ascend (Atom "k0")))
 -}
 
 repeat_sing :: Song -> Song
-repeat_sing s = undefined
+repeat_sing s =  undefined--if s == x then s else x = sing s
 
 test_repeat1 = repeat_sing (Harmony ascend (Atom "z")) == Atom "z"
 
