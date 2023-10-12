@@ -149,7 +149,7 @@ test_sing4 = sing (Harmony (Atom "s?") (Harmony ascend (Atom "k0")))
 -}
 
 repeat_sing :: Song -> Song
-repeat_sing s =  undefined--if s == x then s else x = sing s
+repeat_sing s = if s == sing s then s else repeat_sing (sing s)
 
 test_repeat1 = repeat_sing (Harmony ascend (Atom "z")) == Atom "z"
 
