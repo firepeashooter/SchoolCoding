@@ -425,7 +425,7 @@ prove_core ctx goal (kSucceed, kFail) =
                      -- we have succeeded
                      -- call kSucceed  ::  Derivation -> (() -> b) -> b
                      --
-                     kSucceed TopRight (\() -> try_prove_left)   -- almost correct (please don't correct it right now)
+                     kSucceed TopRight (\() -> try_prove_left())   -- almost correct (please don't correct it right now)
                      
 
                 Implies phi psi  -> -- Implies-Right rule
@@ -446,7 +446,12 @@ prove_core ctx goal (kSucceed, kFail) =
                                  try_prove_left)
 
                 Or phi1 phi2     -> -- Or-Right rules (try Or-Right-1, if it fails, try Or-Right-2)
-                     undefined
+                     prove_core ctx phi1
+                            (\deriv1 -> \more1 -> kSucceed(OrRight 1 deriv1) more1,
+                                 prove_core ctx phi2
+                                      (\deriv2 -> \more2 ->
+                                          kSucceed (OrRight 2 deriv2) more2, kFail))
+                                                   
                 
                 _                 -> -- Can't use any of the -Right rules, so:
                      try_prove_left ()
