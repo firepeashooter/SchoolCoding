@@ -11,7 +11,7 @@ tests/exam/c_src/Q1.c
 cat src/Q1.sh
 
 4.
-
+ls . ../../exam/c_src/
 
 5.
 cd ../../../marking/A1
@@ -28,11 +28,11 @@ ls */A[023456789]*
 9.
 ls */.late* -1  //AGAIN DOUBLE CHECK -1
 
-10.
-
+10.    //WE WANT: HELLO.SH TO BE | USER IS READ WRITE EXECUE | GROUP IS READ - EXECUTE | OTHER IS READ - EXECUTE 
+chmod 755 hello.sh
 
 11.
-
+chmod u=rw-, g=r--, o=--- *.png *.PNG
 
 12.
 wc -l
