@@ -1,0 +1,47 @@
+0.
+pwd
+
+1.
+cd 1/1
+
+2.
+cd ../..
+
+3.
+cd 1
+
+4.
+ls 1/1
+
+5.
+ls 1 1/1
+
+6.
+ls *e*
+
+7.
+ls [[:upper:]]*.txt
+
+8.
+ls -r [[:upper:]]*.txt
+
+9.
+ls -1ir [[:upper:]]*.txt
+
+10.
+ls -A
+
+11.
+The output has at most 75 lines since uniq only filters adjacent matching lines.
+
+12.
+sort -r unsorted.txt > sorted.txt
+
+13.
+ls -t | head -n 1
+
+14.
+ls -t | tail -n 1
+
+15.
+date -I"minutes" | cut -d "T" -f 2 | cut -d "-" -f 1 | tee time.txt

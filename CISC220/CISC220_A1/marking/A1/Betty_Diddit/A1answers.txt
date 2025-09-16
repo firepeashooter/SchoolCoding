@@ -1,0 +1,47 @@
+0.
+pwd
+
+1.
+cd x/y
+
+2.
+cd ../..
+
+3.
+cd ../y/x
+
+4.
+ls x/y
+
+5.
+ls x x/y
+
+6.
+ls *e*
+
+7.
+ls [![:lower:]]*.txt
+
+8.
+ls -r [![:lower:]]*.txt
+
+9.
+ls -i -1 [![:lower:]]*.txt
+
+10.
+ls -d .??*
+
+11.
+The number of lines of output would be between 1 and 75 (inclusive). The 'uniq' command eliminates duplicate entires that are adjacent to one-another. In the perfect case, every chosen word is different from the last, and 'uniq' changes nothing, yielding 75 lines. The worst case is that the exact same word was chosen all 75 times, and the output is only a single line of that word.
+
+12.
+sort -r unsorted.txt > sorted.txt
+
+13.
+ls -t | head -n 1
+
+14.
+ls -t | tail -n 1
+
+15.
+date -I"minutes" | cut --delimiter="T" --fields=2 | cut --delimiter="-" --fields=1 | tee time.txt

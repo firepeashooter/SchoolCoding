@@ -1,0 +1,51 @@
+0.
+pwd
+
+1.
+cd /assignment1/5/9
+
+2.
+cd ../..
+
+3.
+cd ../9/5
+
+4.
+ls 5/9
+
+5.
+ls 5 5/9
+
+6.
+ls *e*
+
+7.
+ls [![:lower:]]*.txt
+
+8.
+ls -r [![:lower:]]*.txt
+
+9.
+ls -i1 [![:lower:]]*.txt
+
+10.
+ls -d .??*
+
+11.
+The number of output lines would be at most 75. Uniq merges any two consecutive matching lines 
+(eg. if a line contained 'bruh' and the next line was also 'bruh' the two are merged into one line), 
+and since we know the file was created using a list of 50 different words assuming no 
+consecutive matching lines, uniq would have no effect on the file.
+
+12.
+sort -r unsorted.txt > sorted.txt
+
+13.
+ls -t | head -n 1
+
+14.
+ls -t | tail -n 1 
+
+15.
+date -I"minutes" | cut -d 'T' -f 2 | cut -d '-' -f 1 > time.txt
+

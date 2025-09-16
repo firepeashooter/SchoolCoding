@@ -1,0 +1,47 @@
+0.
+pwd
+
+1.
+cd 9/5
+
+2.
+cd ../..
+
+3.
+cd ../9/5
+
+4.
+ls 9/5
+
+5.
+ls 9 9/5
+
+6.
+ls | grep e
+
+7.
+ls -d [![:lower:]].txt
+
+8.
+ls -r -d [![:lower:]].txt
+
+9.
+ls -id -d -1 [![:lower:]].txt
+
+10.
+ls -ld .??
+
+11.
+The uniq command gets rid of duplicate lines which are next to each other in a file. Since the text is unsorted the repeated lines won't be adjacent to each other so the number of lines that can be outputted is 75
+
+12.
+sort -r unsorted.txt > sort.txt
+
+13.
+
+
+14.
+
+
+15.
+date -I"minutes" | cut -d "T" -f2 | cut -d "-" -f1

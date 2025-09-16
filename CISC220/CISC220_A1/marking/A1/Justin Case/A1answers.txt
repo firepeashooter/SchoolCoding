@@ -1,0 +1,47 @@
+0.
+pwd
+
+1.
+cd ./3/4
+
+2.
+cd ../../
+
+3.
+cd ../4/3
+
+4.
+ls ./3/4
+
+5.
+ls 3 3/4
+
+6.
+ls *e*
+
+7.
+ls [[:upper:]]*.txt
+
+8.
+ls -r [[:upper:]]*.txt
+
+9.
+ls -i -1 [[:upper:]]*.txt 
+
+10.
+ls -a
+
+11.
+The command will output 50 lines or less because the uniq command only outputs copies of unique lines from a given file. Since there are only 50 words in the word bank we are randomly choosing from, the maximum number of unique lines we could possibly generate is 50 (which is unlikely).
+
+12.
+sort -r 0< unsorted.txt > sorted.txt
+
+13.
+ls -t | head -1
+
+14.
+ls -t | tail -1 
+
+15.
+date -I"minutes" | cut -d"T" -f2 | cut -d"-" -f1 | tee time.txt

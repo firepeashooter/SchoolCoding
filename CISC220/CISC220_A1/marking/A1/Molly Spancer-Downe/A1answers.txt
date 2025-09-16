@@ -1,0 +1,47 @@
+0.
+pwd
+
+1.
+cd 1/6
+
+2.
+cd ..
+
+3.
+cd 1/6/1
+
+4.
+ls 1/6
+
+5.
+ls 1 1/6
+
+6.
+ls e*
+
+7.
+ls [![:upper:]]*.txt
+
+8.
+ls [![:upper:]]*.txt | sort -r
+
+9.
+ls -i -1 [![:upper:]]*.txt 
+
+10.
+ls -a
+
+11.
+There will be only 50 lines (50 words) remaining. This is because the uniq command omits any duplicate or repeated occurences of lines.
+
+12.
+sort -r 0<unsorted.txt > sorted.txt
+
+13.
+ls -lht | sort | head -1
+
+14.
+ls -lht | sort -r | tail -1
+
+15.
+date +%R > time.txt

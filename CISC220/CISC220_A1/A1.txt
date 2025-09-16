@@ -1,0 +1,47 @@
+0.
+pwd
+
+1.
+~/school/CISC220/CISC220_A1/tests/midterm/src/Q1.sh
+
+2.
+tests/exam/c_src/Q1.c
+
+3.
+cat src/Q1.sh
+
+4.
+
+
+5.
+cd ../../../marking/A1
+
+6.
+ls */*1* -1  //DOES -1 DO THIS CHECK THE SLIDES BOZO
+
+7.
+ls */A[023456789]*
+
+8.
+
+
+9.
+ls */.late* -1  //AGAIN DOUBLE CHECK -1
+
+10.
+
+
+11.
+
+
+12.
+wc -l
+
+13.
+cut -f2,3 CISC220.cl | sort -r
+
+14.
+cut -f2 CISC220.cl | cut -d',' | sort | head -n 8
+
+15.
+

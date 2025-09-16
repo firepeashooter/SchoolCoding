@@ -1,0 +1,60 @@
+0.
+pwd
+
+1.
+cd 5/3
+or cd assignment1/5/3
+2.
+cd assignment1
+
+3.
+cd assignment1/3/5
+
+4.
+
+ls /assignment1/3 /5
+5.
+
+ls /assigment1 /3/5
+
+6.
+ls *e*
+
+7.
+ls [[:upper]]*.txt
+
+ls 
+
+8.
+
+ls -r [[:upper]]*.txt | sort 
+9.
+ ls -1i -r [[:upper]]*.txt | sort 
+
+10.
+
+ ls-A
+
+
+11.
+if you were to run uniq unsorted.txt you would end up with less lines
+because uniq filters out repeated lines in a file, and since its random you might end up
+with the same word in multiple files and the uniq command will make sure that doesnt happen
+which means you should end up with less lines, to be exact u should end up with 50 lines 
+since their is only
+50 unique words
+
+12.
+
+ unsorted.txt -r | sort  1> sorted.txt
+
+13.
+ls -At | head -n1 | sort
+
+
+14.
+ls -Art | tail-n1 | sort
+
+15.
+
+date -I"minutes" | tee time.txt | cut  --delimiter="t" --field=3 cut  --delimiter="-" --field=4
