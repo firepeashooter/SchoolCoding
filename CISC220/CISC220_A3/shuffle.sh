@@ -14,14 +14,13 @@ echo $(shuf -i 0-$n | tr '\n' ' ')
 
 #Exit if there are no commands given
 if (( $# == 0)); then
-    echo "No commands";
     exit
 fi
 
 string=$1
 rand=$(randperm $((${#string} - 1)))
 
-echo $rand
+
 
 #Create a new string we need to splice
 
@@ -32,7 +31,6 @@ echo $rand
 
 
 for num in $rand; do
-    echo $num
     newString+="${string:num:1}"
 done
 

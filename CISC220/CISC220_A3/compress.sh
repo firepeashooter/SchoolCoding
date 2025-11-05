@@ -3,7 +3,33 @@
 # Compresses the elements of the array arr storing the
 # result in the array enc
 comp() {
-    next 0
+
+    
+
+    n=${#arr[@]}
+
+    if (( n > 0)); then
+        start=0
+        val=${arr[$start]}
+        finished=1
+
+        while ((finished == 1)); do
+            end=$(next "$start")
+
+            if ((end == -1)); then
+                end=$n
+                finished=0
+            fi
+
+            count=$(( end - start ))
+            enc+=("$count")
+            enc+=("$val")
+
+            start=$end
+            val=${arr[$start]}
+        done
+    fi
+
 }
 
 
@@ -43,7 +69,8 @@ next() {
 
 }
 
-
+#Create the encoded array
+declare -a enc
 # create array arr from command line arguments
 arr=("$@")
 # compress the array
