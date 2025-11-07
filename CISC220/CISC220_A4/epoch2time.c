@@ -4,6 +4,16 @@
 int main(int argc, char *argv[]) {
     // test for number of command line arguments and sign of first
     // command line argument here...
+    if (argc > 1 || argc == 0){
+
+        fprintf(stderr, "Usage: epoch2time number-of-seconds");
+        exit(1);
+    }
+
+    if (argv[1][0] == '-'){
+        fprintf(stderr, "epoch2time: negative number of seconds");
+        exit(2);
+    } 
 
 
 
@@ -15,7 +25,15 @@ int main(int argc, char *argv[]) {
     const unsigned int SEC_PER_HOUR = 60 * SEC_PER_MIN;
     const unsigned int HOUR_PER_DAY = 24;
 
+    //Computer hour, minute and second times
+
+    int hours = n / sec per hour 
+
+
     // compute clocktime corresponding to timestamp n here...
+
+    //print the command line argument follow by the formatted time
+    printf("%lu = %02u:%02u:%02u\n", n, hours, minutes, seconds);
 
     
 }
