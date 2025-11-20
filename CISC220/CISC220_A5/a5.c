@@ -77,12 +77,34 @@ char *strrepeat(const char *s, size_t n){
 
 void strselfcat(char **s){
 
+    size_t n = strlen(*s);
+
+    char* s_new = realloc(*s, 2 * n + 1);
+    if (!s_new){
+        fprintf(stderr, "Your not smart enough to understand this error");
+        return;
+    }
+
+    memcpy(s_new + n, s_new, n);
+
+    //add null terminator to the new string
+    s_new[2 * n] = '\n';
+
+    *s = s_new;
 
 
 };
 
 void strrmlast(char *s, char c){
 
+    //find the index of the last occurence
+    char* index = strrchr(s, c);
+
+    if (index == NULL){
+        return;
+    };
+
+    memmove(index, index+1, strlen(index));
 
 
 };
@@ -90,7 +112,18 @@ void strrmlast(char *s, char c){
 
 int main(int argc, char const *argv[])
 {
-    char str[] = "hello";
-    char *rep = strrepeat(str, 3);
-    puts(rep);
+
+    char *str = malloc(27);     // IMPORTANT: MUST BE DYNAMICALLY ALLOCATED, CANNOT BE
+                                // INITIALIZED FROM A STRING LITERAL
+
+    // str is the string "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for (char c = 'A'; c <= 'Z'; c++) {
+        str[c - 'A'] = c;
+    }
+    str[26] = '\0';
+
+    strselfcat(&str);           // str now points at a reallocated array
+    puts(str);
+
+    
 };
