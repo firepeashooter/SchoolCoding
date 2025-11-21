@@ -92,7 +92,6 @@ void strselfcat(char **s){
 
     *s = s_new;
 
-
 };
 
 void strrmlast(char *s, char c){
@@ -106,24 +105,7 @@ void strrmlast(char *s, char c){
 
     memmove(index, index+1, strlen(index));
 
-
 };
 
 
-int main(int argc, char const *argv[])
-{
-
-    char *str = malloc(27);     // IMPORTANT: MUST BE DYNAMICALLY ALLOCATED, CANNOT BE
-                                // INITIALIZED FROM A STRING LITERAL
-
-    // str is the string "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for (char c = 'A'; c <= 'Z'; c++) {
-        str[c - 'A'] = c;
-    }
-    str[26] = '\0';
-
-    strselfcat(&str);           // str now points at a reallocated array
-    puts(str);
-
-    
-};
+;

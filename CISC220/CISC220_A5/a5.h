@@ -1,6 +1,8 @@
 #ifndef A5_H
 #define A5_H
 
+#include <stdio.h>
+
 int strind(const char *s, char c);
 
 
